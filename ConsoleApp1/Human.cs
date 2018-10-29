@@ -57,11 +57,7 @@ namespace Humanchik
             get { return alive; }
         }
 
-<<<<<<< HEAD
-        public byte Age { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool Sex { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool Alive { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-=======
+
         public double Money
         {
             get { return money; }
@@ -72,7 +68,8 @@ namespace Humanchik
         {
             get { return name; }
         }
->>>>>>> 59aeb5b581c1754de9c0b205444d15220800a26a
+
+        bool IMammal.Alive { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void GetFood()
         {
