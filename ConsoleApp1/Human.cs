@@ -57,7 +57,6 @@ namespace Humanchik
             get { return alive; }
         }
 
-
         public double Money
         {
             get { return money; }
@@ -68,8 +67,6 @@ namespace Humanchik
         {
             get { return name; }
         }
-
-        bool IMammal.Alive { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void GetFood()
         {
