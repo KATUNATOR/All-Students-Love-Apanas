@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{9F48E2B5-8142-4D01-BA7F-7C5371996F7D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ConsoleApp1/Student.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ConsoleApp1/Abiturient.cs">
     <Files>
       <File FileName="ConsoleApp1/Mammal.cs" Line="1" Column="1" />
       <File FileName="ConsoleApp1/Human.cs" Line="1" Column="1" />
-      <File FileName="ConsoleApp1/Student.cs" Line="11" Column="9" />
+      <File FileName="ConsoleApp1/Student.cs" Line="20" Column="18" />
       <File FileName="ConsoleApp1/Abiturient.cs" Line="11" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>

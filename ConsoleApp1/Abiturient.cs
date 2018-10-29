@@ -8,6 +8,6 @@ namespace Abiturientik
 {
     class Abiturient
     {
-
+        public string spec;
     }
 }
