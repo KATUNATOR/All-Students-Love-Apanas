@@ -3,55 +3,66 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Abiturientik;
 
 namespace Studentik
 {
-    class Student 
+    class Student : Abiturient
     {
-        public double AverMark;
-        public byte MaxMark;
-        public byte MinMark;
-        public double[] Averages
+        public int group;
+        public bool budget;
+
+        struct Zachetka
         {
-            get
+            public byte MaxMark;
+            public byte MinMark;
+            public double Sem; //средняя за семестр
+            public double[,] Otsenki //массив оценок за предметы
             {
-                double[] a = new double[n, m];
-                for (int i = 0; i < n; i++)
+                get
                 {
-                    for (int j = 0; j < m; j++)
+                    double[,] a = new double[n,m];
+                    for (int i = 0; i < n; i++)
                     {
-                        a[i] += marks[i, j];
+                        for (int j = 0; j < m; j++)
+                        {
+                            a[i] += marks[i, j];
+                        }
+                        a[i] /= n;
                     }
-                    a[i] /= n;
+                    return a;
                 }
-                return a;
             }
-        }
-        public double[,] Sem; //семестр/предметы
 
 
-        public Zachetka(double AverMark, byte MaxMark, byte MinMark, double[,] Sem)
-        {
-            this.AverMark = AverMark;
-            this.MaxMark = MaxMark;
-            this.MinMark = MinMark;
-            this.Sem = Sem;
-        }
-
-
-
-        public void Zapoln()
-        {
-            int[,] mas = new int[5, 5];
-            Random rand = new Random();
-            for (int i = 0; i < 5; i++)
+            public Zachetka(double AverMark, byte MaxMark, byte MinMark, double Sem, double[,] Otsenki)
             {
-                for (int j = 0; j < 5; j++)
-                {
-                    mas[i, j] = rand.Next(0, 100);
-                    Console.Write(mas[i, j] + "\t");
-                }
-                Console.WriteLine();
+
+                this.MaxMark = MaxMark;
+                this.MinMark = MinMark;
+                this.Sem = Sem;
             }
+
         }
+
+
+
+
+        public int Progul()
+        {
+            Console.WriteLine("Сколько дней хотите прогулять?");
+            int d = Convert.ToInt64(Console.ReadLine());
+            return d;
+        }
+
+        public void Otvet()
+        {
+            Console.WriteLine("Ваша оценка:");
+            Random rand = new Random();
+            int mark = rand.Next(0, 10);
+        }
+
+
+    }
 }
+

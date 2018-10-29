@@ -32,7 +32,6 @@ namespace Humanchik
         public byte Age { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public bool Sex { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public bool Alive { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public 
 
         public void GetFood()
         {
