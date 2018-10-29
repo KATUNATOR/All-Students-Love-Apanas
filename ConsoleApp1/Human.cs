@@ -19,7 +19,7 @@ namespace Humanchik
         public Human(byte age, bool sex) : this()
         {
             this.age = age;
-            Sex = sex;
+            this.sex = sex;
         }
         public Human(byte age, bool sex, double money, string name) : this(age, sex)
         {
@@ -27,20 +27,64 @@ namespace Humanchik
             this.name = name;
         }
 
+        public byte Age 
+        { 
+            get { return age; }
+            set { if (value > age) age = value; }
+        }
 
+        public bool Sex 
+        {
+            get { return sex; }
+            set 
+            {
+                Console.Write("Введите максимальное значение типа long: ");
+                string answear = Console.ReadLine();
+                if (answear.Equals("2147483647"))
+                {
+                    Console.WriteLine(@"Поздравляем, теперь Вы {0} пола!", (value) ? ("Женского") : ("Мужского"));
+                    sex = value;
+                }
+                else
+                {
+                    Console.WriteLine("Прости, в следующий раз...");
+                }                 
+            }
+        }
 
+        public bool Alive
+        {
+            get { return alive; }
+        }
+
+<<<<<<< HEAD
         public byte Age { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public bool Sex { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public bool Alive { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+=======
+        public double Money
+        {
+            get { return money; }
+            set { money = value; }
+        }
+
+        public string Name
+        {
+            get { return name; }
+        }
+>>>>>>> 59aeb5b581c1754de9c0b205444d15220800a26a
 
         public void GetFood()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < new Random().Next(1,10); i++)
+            {
+                Console.WriteLine("Хрум-хрум...");
+            }
         }
 
         public void GetIll()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("БРРРР1!1!! ЗАКРОЙТЕ ФОРТОЧКУ!!1! МНЕ ДУЕТ!!11!1!");
         }
     }
 }
