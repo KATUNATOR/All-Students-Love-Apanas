@@ -9,16 +9,24 @@ namespace Studentik
 {
     class Student : Abiturient
     {
-        public int group;
-        public bool budget;
+        int group;
+        bool budget;
+        Zachetka zach = new Zachetka();
 
-        struct Zachetka
+        public Student(int group, bool budget, string spec, byte classes, ) : base(spec, classes)
+        {
+            this.group = group;
+            this.budget = budget;
+
+        }
+
+        public struct Zachetka
         {
             public byte MaxMark;
             public byte MinMark;
-            public const int semCount=7;
-            public const int lesCount=10;
-            public double[,] Otsenki = new double[semCount, lesCount]; //массив оценок за предметы
+            public int semCount;
+            public int lesCount;
+            public double[,] Otsenki; //массив оценок за предметы
             public double[] Sem //средняя за семестp
             {
                 get
@@ -38,8 +46,11 @@ namespace Studentik
                 }
             }
 
-            public Zachetka()
+            public Zachetka(int semCount, int lesCount)
             {
+                this.semCount = semCount;
+                this.lesCount = lesCount;
+                Otsenki = new double[semCount, lesCount];
                 Random rand = new Random();
                 for (int i = 0; i < semCount; i++)
                 {

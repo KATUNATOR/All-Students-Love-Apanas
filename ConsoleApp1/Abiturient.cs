@@ -9,10 +9,10 @@ namespace Abiturientik
 {
     class Abiturient : Human
     {
-        public string spec;
-        public byte classes;
+        string spec;
+        byte classes;
 
-        public Abiturient (string spec, byte classes)
+        public Abiturient(string spec, byte classes, bool sex, byte age, double money, string name) : base(age, sex, money, name)
         {
             this.spec = spec;
             this.classes = classes;
@@ -29,7 +29,6 @@ namespace Abiturientik
             get { return classes; }
         }
 
-
         public void Ekzamen()
         {
             Random rand = new Random();
@@ -37,7 +36,10 @@ namespace Abiturientik
             Console.WriteLine("Студент {0},{1},{2}", Name, Sex, Age);
             Console.WriteLine("Получил {0} за экзамен на специальность {1},после {2} классов",mark,spec,classes);
         }
-                                 
 
+        public override void GetMoney()
+        {
+            Console.WriteLine("Мааам,дай денежку!!! *.*");
+        }
     }
 }

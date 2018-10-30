@@ -11,18 +11,14 @@ namespace Humanchik
     {
         byte age;
         bool sex;
-        bool alive;
+        bool alive = true;
         double money;
         string name;
 
-        public Human() { alive = true; }
-        public Human(byte age, bool sex) : this()
+        public Human(byte age, bool sex, double money, string name)
         {
             this.age = age;
             this.sex = sex;
-        }
-        public Human(byte age, bool sex, double money, string name) : this(age, sex)
-        {
             this.money = money;
             this.name = name;
         }
@@ -83,5 +79,7 @@ namespace Humanchik
         {
             Console.WriteLine("БРРРР1!1!! ЗАКРОЙТЕ ФОРТОЧКУ!!1! МНЕ ДУЕТ!!11!1!");
         }
+
+        public abstract void GetMoney();
     }
 }
