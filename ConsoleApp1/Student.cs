@@ -16,17 +16,21 @@ namespace Studentik
         {
             public byte MaxMark;
             public byte MinMark;
-            public double Sem; //средняя за семестр
-            public double[,] Otsenki //массив оценок за предметы
+            public const int semCount=7;
+            public const int lesCount=10;
+            public double[,] Otsenki = new double[semCount, lesCount]; //массив оценок за предметы
+            public double[] Sem //средняя за семестp
             {
                 get
                 {
-                    double[,] a = new double[n,m];
+                    int n = semCount;
+                    int m = lesCount;
+                    double[] a = new double[n];
                     for (int i = 0; i < n; i++)
                     {
                         for (int j = 0; j < m; j++)
                         {
-                            a[i] += marks[i, j];
+                            a[i] += Otsenki[i, j];
                         }
                         a[i] /= n;
                     }
@@ -34,13 +38,16 @@ namespace Studentik
                 }
             }
 
-
-            public Zachetka(double AverMark, byte MaxMark, byte MinMark, double Sem, double[,] Otsenki)
+            public Zachetka()
             {
-
-                this.MaxMark = MaxMark;
-                this.MinMark = MinMark;
-                this.Sem = Sem;
+                Random rand = new Random();
+                for (int i = 0; i < semCount; i++)
+                {
+                    for (int j = 0; j < lesCount; j++)
+                    {
+                        Otsenki[i, j]=rand.Next(1,11);
+                    }
+                }
             }
 
         }
@@ -51,7 +58,7 @@ namespace Studentik
         public int Progul()
         {
             Console.WriteLine("Сколько дней хотите прогулять?");
-            int d = Convert.ToInt64(Console.ReadLine());
+            int d = Convert.ToInt32(Console.ReadLine());
             return d;
         }
 

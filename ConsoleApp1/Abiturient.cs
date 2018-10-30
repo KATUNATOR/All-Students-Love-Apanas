@@ -33,7 +33,7 @@ namespace Abiturientik
         public void Ekzamen()
         {
             Random rand = new Random();
-            int mark = rand.Next(0, 10);
+            int mark = rand.Next(1, 11);
             Console.WriteLine("Студент {0},{1},{2}", Name, Sex, Age);
             Console.WriteLine("Получил {0} за экзамен на специальность {1},после {2} классов",mark,spec,classes);
         }
